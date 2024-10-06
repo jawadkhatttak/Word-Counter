@@ -1,4 +1,4 @@
- let words = document.getElementById("words");
+let words = document.getElementById("words");
         let sentences = document.getElementById("sentences");
         let characters = document.getElementById("characters");
         let paragraphs = document.getElementById("paragraph");
@@ -12,35 +12,29 @@
         input.addEventListener('input', (event) => {
             const inp = input.value;
 
-            if (inp === '') {
-                lettercounter = 0;
-                wordcounter = 0;
-                para = 0;
-                sentence = 0;
-            } else {
-                lettercounter = 0;
-                wordcounter = 0;
-                let word = false;
 
-                for (let i = 0; i < inp.length; i++) {
-                    const char = inp[i];
+            lettercounter = 0;
+            wordcounter = 0;
+            let word = false;
 
-                    if (char !== ' ') {
-                        lettercounter++;
-                    }
+            for (let i = 0; i < inp.length; i++) {
+                const char = inp[i];
 
-                    if (char !== ' ' && !word) {
-                        word = true;
-                        wordcounter++;
-                    } else if (char === ' ') {
-                        word = false;
-                    }
+                if (char !== ' ') {
+                    lettercounter++;
                 }
 
-                para = inp.split('\n').length - 1;
-
-                sentence = inp.split(/[.!?]/).length - 1;
+                if (char !== ' ' && !word) {
+                    word = true;
+                    wordcounter++;
+                } else if (char === ' ') {
+                    word = false;
+                }
             }
+
+            para = inp.split('\n').length - 1;
+
+            sentence = inp.split(/[.!?]/).length - 1;
 
             characters.textContent = lettercounter;
             words.textContent = wordcounter;
