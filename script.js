@@ -1,4 +1,4 @@
-  let words = document.getElementById("words");
+let words = document.getElementById("words");
         let sentences = document.getElementById("sentences");
         let characters = document.getElementById("characters");
         let paragraphs = document.getElementById("paragraph");
