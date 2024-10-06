@@ -37,7 +37,7 @@
                     }
                 }
 
-                para = inp.split('\n').length;
+                para = inp.split('\n').length - 1;
 
                 sentence = inp.split(/[.!?]/).length - 1;
             }
